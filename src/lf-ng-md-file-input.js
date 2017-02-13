@@ -525,10 +525,10 @@
                 scope.removeFile = function(lfFile) {
                     scope.lfFiles.every(function(obj,idx){
 						if(obj.key == lfFile.key){
+							scope.lfFiles.splice(idx,1);
                             if(angular.isFunction(scope.lfOnFileRemove)){
                                 scope.lfOnFileRemove(obj,idx);
                             }
-							scope.lfFiles.splice(idx,1);
 							return false;
 						}
 						return true;
